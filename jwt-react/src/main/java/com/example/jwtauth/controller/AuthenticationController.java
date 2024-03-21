@@ -61,10 +61,10 @@ public class AuthenticationController {
                 userRepository.save(loggedInUser);
                 return ResponseEntity.ok(new AuthenticationResponse(null, "Logout successfully"));
             } else {
-                return ResponseEntity.ok(new AuthenticationResponse(null, "User already logged out"));
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body(new AuthenticationResponse(null, "User already logged out"));
             }
         } catch (Exception e) {
-            // Handle other exceptions here
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(new AuthenticationResponse(null, "An error occurred during logout"));
         }

@@ -11,18 +11,20 @@ import Main from "./Components/Main";
 import Pricing from "./Components/Pricing";
 import SignIn from "./Components/SignIn";
 import SignUp from "./Components/SignUp";
+import Fun from "./Components/Fun";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
       { path: "/", element: <Main /> },
-      { path: "/Dashboard", element: <DashBoard /> },
-      { path: "/Courses", element: <Courses /> },
-      { path: "/About", element: <About /> },
-      { path: "/Pricing", element: <Pricing /> },
-      { path: "/Signin", element: <SignIn /> },
-      { path: "/SignUp", element: <SignUp /> },
+      { path: "/dashboard", element: <DashBoard /> },
+      { path: "/courses", element: <Courses /> },
+      { path: "/about", element: <About /> },
+      { path: "/pricing", element: <Pricing /> },
+      { path: "/signin", element: <SignIn /> },
+      { path: "/signUp", element: <SignUp /> },
+      { path: "/fun", element: <Fun /> },
     ],
   },
 ]);

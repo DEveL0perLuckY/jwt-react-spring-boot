@@ -9,48 +9,69 @@ const Header = ({ startLoadingBar }) => {
           <Link className="navbar-brand" to="/">
             Educational Platform
           </Link>
-
-          <div id="navbarNav">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div id="navbarSupportedContent" className="collapse navbar-collapse">
             <ul className="navbar-nav ml-auto">
-              
               <NavLink
-                to="/Dashboard"
-                className={(isActive) => `${isActive ? "nav-link " : "nav-link active"}`}
+                to="/dashboard"
+                className={(isActive) =>
+                  `${isActive ? "nav-link " : "nav-link active"}`
+                }
                 onClick={startLoadingBar}
               >
                 Dashboard
               </NavLink>
               <NavLink
-                to="/Courses"
-                className={(isActive) => `${isActive ? "nav-link " : "nav-link active"}`}
+                to="/courses"
+                className={(isActive) =>
+                  `${isActive ? "nav-link " : "nav-link active"}`
+                }
                 onClick={startLoadingBar}
               >
                 Courses
               </NavLink>
               <NavLink
-                to="/About"
-                className={(isActive) => `${isActive ? "nav-link " : "nav-link active"}`}
+                to="/about"
+                className={(isActive) =>
+                  `${isActive ? "nav-link " : "nav-link active"}`
+                }
                 onClick={startLoadingBar}
               >
                 About
               </NavLink>
               <NavLink
-                to="/Pricing"
-                className={(isActive) => `${isActive ? "nav-link " : "nav-link active"}`}
+                to="/pricing"
+                className={(isActive) =>
+                  `${isActive ? "nav-link " : "nav-link active"}`
+                }
                 onClick={startLoadingBar}
               >
                 Pricing
               </NavLink>
               <NavLink
-                to="/SignIn"
-                className={(isActive) => `${isActive ? "nav-link " : "nav-link active"}`}
+                to="/signIn"
+                className={(isActive) =>
+                  `${isActive ? "nav-link " : "nav-link active"}`
+                }
                 onClick={startLoadingBar}
               >
                 Login
               </NavLink>
               <NavLink
-                to="/SignUp"
-                className={(isActive) => `${isActive ? "nav-link " : "nav-link active"}`}
+                to="/signUp"
+                className={(isActive) =>
+                  `${isActive ? "nav-link " : "nav-link active"}`
+                }
                 onClick={startLoadingBar}
               >
                 SignUp

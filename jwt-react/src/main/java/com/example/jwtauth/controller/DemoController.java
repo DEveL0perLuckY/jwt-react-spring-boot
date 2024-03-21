@@ -1,6 +1,7 @@
 package com.example.jwtauth.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,12 +16,24 @@ public class DemoController {
 
     @GetMapping("/demo")
     public ResponseEntity<String> demo() {
-        return ResponseEntity.ok("Hello from secured url");
+        try {
+            return ResponseEntity.ok("Hello from secured URL");
+        } catch (Exception e) {
+            // Handle other exceptions here
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("An error occurred while processing the request");
+        }
+
     }
 
     @GetMapping("/admin_only")
     public ResponseEntity<String> adminOnly() {
-        return ResponseEntity.ok("Hello from admin only url");
+        try {
+            return ResponseEntity.ok("Hello from admin-only URL");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("An error occurred while processing the request");
+        }
     }
 
 }

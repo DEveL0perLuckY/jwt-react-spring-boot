@@ -2,7 +2,6 @@
 import { MYAXIOS } from "./Helper";
 
 const Register = async (user) => {
-    console.log(user)
     try { 
         const response = await MYAXIOS.post('/api/register', user, {
             headers: {
